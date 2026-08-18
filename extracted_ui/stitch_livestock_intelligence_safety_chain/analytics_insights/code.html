@@ -1,0 +1,332 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"on-primary-container":"#80bea6","on-background":"#191c1b","inverse-surface":"#2e312f","surface-dim":"#d8dbd7","surface-container-highest":"#e1e3e0","on-secondary-fixed":"#001f28","tertiary-fixed":"#ffdad5","surface-container-lowest":"#ffffff","outline-variant":"#bfc9c3","on-primary-fixed-variant":"#0b513d","secondary-container":"#76dcff","surface-container":"#eceeeb","on-tertiary-container":"#ea9e93","outline":"#707974","primary-fixed-dim":"#95d3ba","on-error":"#ffffff","surface-variant":"#e1e3e0","secondary":"#006780","secondary-fixed":"#b7eaff","on-primary":"#ffffff","tertiary-fixed-dim":"#ffb4a9","background":"#f8faf6","on-tertiary-fixed":"#380d08","on-tertiary":"#ffffff","on-secondary-fixed-variant":"#004e61","surface-container-low":"#f2f4f1","on-surface-variant":"#404944","on-secondary":"#ffffff","primary":"#003527","inverse-on-surface":"#eff1ee","on-secondary-container":"#006077","surface-bright":"#f8faf6","error-container":"#ffdad6","tertiary":"#4f1f19","secondary-fixed-dim":"#6cd3f7","surface-tint":"#2b6954","surface":"#f8faf6","error":"#ba1a1a","primary-container":"#064e3b","tertiary-container":"#6b342d","on-primary-fixed":"#002117","primary-fixed":"#b0f0d6","on-surface":"#191c1b","on-tertiary-fixed-variant":"#6e372f","surface-container-high":"#e7e9e5","inverse-primary":"#95d3ba","on-error-container":"#93000a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-desktop":"40px","xs":"4px","sm":"8px","md":"16px","margin-mobile":"16px","lg":"24px","base":"4px","gutter":"24px","xl":"32px"},"fontFamily":{"body-sm":["Inter"],"headline-lg-mobile":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"display-lg":["Inter"],"data-label":["JetBrains Mono"],"headline-md":["Inter"]},"fontSize":{"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"data-label":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-on-background"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col border-r border-outline-variant/30"><div class="px-lg py-xl flex items-center gap-sm"><span class="material-symbols-outlined text-primary text-3xl">cases</span><div class="flex flex-col"><span class="font-headline-sm text-primary leading-tight tracking-tight">EMERALD SENTINEL</span><span class="font-data-label text-on-surface-variant uppercase text-[10px]">Food Safety Protocol</span></div></div><nav class="flex-1 px-md space-y-xs overflow-y-auto pb-xl" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="dashboard" href="#">Dashboard</a><a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="farms" href="#">Farms</a><a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="prescriptions" href="#">Prescriptions</a><a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="mrl-testing" href="#">MRL Testing</a><a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="withdrawal-monitor" href="#">Withdrawal Monitor</a><a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="traceability" href="#">Traceability</a><a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="risk-map" href="#">Risk Map</a><a aria-current="page" class="flex items-center px-md py-sm rounded-lg transition-all bg-primary-container text-on-primary-container font-bold" data-path="analytics" href="#">Analytics</a><a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="compliance" href="#">Compliance</a><a class="flex items-center px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="settings" href="#">Settings</a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/80 backdrop-blur-xl z-40 px-lg flex items-center justify-between border-b border-outline-variant/20 shadow-[0_4px_12px_rgba(0,0,0,0.02)]"><div class="flex items-center flex-1 max-w-xl"><div class="relative w-full group"><span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span><input class="w-full bg-surface-container-highest border-none rounded-full py-sm pl-xl pr-md text-body-sm focus:ring-2 focus:ring-secondary focus:outline-none transition-all" placeholder="Search records, tag IDs, or compliance data..." type="text"/></div></div><div class="flex items-center gap-lg ml-lg"><div class="flex flex-col text-right"><span class="font-data-label text-[10px] text-on-surface-variant uppercase">System Authority</span><span class="font-body-sm font-semibold text-primary">Verified User</span></div><button class="relative p-sm rounded-full hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-on-surface-variant">notifications</span><span class="absolute top-1 right-1 w-2.5 h-2.5 bg-error border-2 border-surface rounded-full"></span></button><div class="flex items-center gap-md pl-lg border-l border-outline-variant/30"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">person</span></div></div></div></header><main class="relative pt-20 bg-background min-h-screen"><div class="flex flex-col w-full gap-xl p-lg">
+<!-- Header Strategy Area -->
+<div class="flex items-end justify-between w-full">
+<div class="flex flex-col">
+<h1 class="font-headline-lg text-headline-lg text-on-background tracking-tight">Analytics & Trends</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-xs">Comprehensive Antimicrobial Usage (AMU) analytics and stewardship benchmarking.</p>
+</div>
+<div class="flex gap-sm">
+<button class="bg-surface-container-high text-on-surface flex items-center gap-xs px-md py-sm rounded-full font-data-label text-data-label hover:bg-surface-container transition-colors shadow-sm hover:shadow-md">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                Last 12 Months
+                <span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+<button class="bg-primary text-on-primary flex items-center gap-xs px-md py-sm rounded-full font-data-label text-data-label hover:bg-primary/90 transition-colors shadow-md">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Export Report
+            </button>
+</div>
+</div>
+<!-- Top Level KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="bg-surface-container rounded-xl p-md flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex justify-between items-start z-10">
+<span class="font-data-label text-data-label text-on-surface-variant uppercase tracking-wider">Total AMU Volume</span>
+<span class="material-symbols-outlined text-primary bg-primary/10 p-xs rounded-full">vaccines</span>
+</div>
+<div class="mt-lg z-10">
+<div class="flex items-baseline gap-sm">
+<span class="font-display-lg text-display-lg text-on-background">4,285</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">kg</span>
+</div>
+<div class="flex items-center gap-xs mt-xs text-primary">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span class="font-data-label text-data-label">-12.4% vs last year</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-md flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-secondary/5 rounded-full blur-xl group-hover:bg-secondary/10 transition-colors"></div>
+<div class="flex justify-between items-start z-10">
+<span class="font-data-label text-data-label text-on-surface-variant uppercase tracking-wider">Active Prescriptions</span>
+<span class="material-symbols-outlined text-secondary bg-secondary/10 p-xs rounded-full">receipt_long</span>
+</div>
+<div class="mt-lg z-10">
+<div class="flex items-baseline gap-sm">
+<span class="font-display-lg text-display-lg text-on-background">142</span>
+</div>
+<div class="flex items-center gap-xs mt-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">horizontal_rule</span>
+<span class="font-data-label text-data-label">Stable across regions</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-md flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-tertiary/5 rounded-full blur-xl group-hover:bg-tertiary/10 transition-colors"></div>
+<div class="flex justify-between items-start z-10">
+<span class="font-data-label text-data-label text-on-surface-variant uppercase tracking-wider">High Risk Farms</span>
+<span class="material-symbols-outlined text-tertiary bg-tertiary/10 p-xs rounded-full">warning</span>
+</div>
+<div class="mt-lg z-10">
+<div class="flex items-baseline gap-sm">
+<span class="font-display-lg text-display-lg text-on-background">3</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ 48 total</span>
+</div>
+<div class="flex items-center gap-xs mt-xs text-error">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="font-data-label text-data-label">+1 since last month</span>
+</div>
+</div>
+</div>
+<div class="bg-primary text-on-primary rounded-xl p-md flex flex-col justify-between shadow-md relative overflow-hidden">
+<div class="absolute right-0 bottom-0 opacity-10">
+<svg fill="none" height="120" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="120"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+</div>
+<div class="flex justify-between items-start z-10">
+<span class="font-data-label text-data-label text-primary-fixed-dim uppercase tracking-wider">Avg Stewardship Score</span>
+<span class="material-symbols-outlined text-on-primary bg-primary-container p-xs rounded-full">military_tech</span>
+</div>
+<div class="mt-lg z-10 flex flex-col">
+<div class="flex items-baseline gap-sm">
+<span class="font-display-lg text-display-lg">84.2</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim">/ 100</span>
+</div>
+<div class="w-full bg-primary-container h-1.5 rounded-full mt-sm overflow-hidden">
+<div class="bg-primary-fixed w-[84.2%] h-full rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Visualizations Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Large Line Chart: AMU Trends -->
+<div class="lg:col-span-2 bg-surface-container rounded-xl p-lg flex flex-col shadow-sm">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-headline-sm text-headline-sm text-on-background">AMU Volume Trends Over Time</h2>
+<div class="flex gap-sm">
+<span class="flex items-center gap-xs font-data-label text-data-label text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-primary"></span> Current Year</span>
+<span class="flex items-center gap-xs font-data-label text-data-label text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-outline-variant"></span> Previous Year</span>
+</div>
+</div>
+<div class="flex-1 relative min-h-[300px] flex items-end">
+<!-- Decorative SVG Line Chart -->
+<svg class="w-full h-full preserve-aspect-ratio-none" preserveaspectratio="none" viewbox="0 0 800 300">
+<!-- Grid Lines -->
+<g class="text-outline-variant/30" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1">
+<line x1="0" x2="800" y1="50" y2="50"></line>
+<line x1="0" x2="800" y1="125" y2="125"></line>
+<line x1="0" x2="800" y1="200" y2="200"></line>
+<line x1="0" x2="800" y1="275" y2="275"></line>
+</g>
+<!-- Y Axis Labels -->
+<g class="text-on-surface-variant font-data-label text-[10px]" fill="currentColor">
+<text x="0" y="45">800k</text>
+<text x="0" y="120">600k</text>
+<text x="0" y="195">400k</text>
+<text x="0" y="270">200k</text>
+</g>
+<!-- Previous Year Area & Line (Grey) -->
+<path d="M 50 250 L 150 220 L 250 240 L 350 180 L 450 190 L 550 140 L 650 160 L 750 120 V 275 H 50 Z" fill="url(#prevYearGradient)" opacity="0.5"></path>
+<path class="text-outline-variant" d="M 50 250 L 150 220 L 250 240 L 350 180 L 450 190 L 550 140 L 650 160 L 750 120" fill="none" stroke="currentColor" stroke-dasharray="4 4" stroke-width="2"></path>
+<!-- Current Year Area & Line (Primary) -->
+<defs>
+<lineargradient id="currentYearGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#003527" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#003527" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="prevYearGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#bfc9c3" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#bfc9c3" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M 50 230 L 150 180 L 250 210 L 350 140 L 450 150 L 550 90 L 650 110 L 750 60 V 275 H 50 Z" fill="url(#currentYearGradient)"></path>
+<path class="text-primary" d="M 50 230 L 150 180 L 250 210 L 350 140 L 450 150 L 550 90 L 650 110 L 750 60" fill="none" stroke="currentColor" stroke-width="3"></path>
+<!-- Data Points for Current Year -->
+<g class="text-primary" fill="currentColor">
+<circle class="hover:r-6 transition-all cursor-pointer" cx="50" cy="230" r="4"></circle>
+<circle class="hover:r-6 transition-all cursor-pointer" cx="150" cy="180" r="4"></circle>
+<circle class="hover:r-6 transition-all cursor-pointer" cx="250" cy="210" r="4"></circle>
+<circle class="hover:r-6 transition-all cursor-pointer" cx="350" cy="140" r="4"></circle>
+<circle class="hover:r-6 transition-all cursor-pointer" cx="450" cy="150" r="4"></circle>
+<circle class="hover:r-6 transition-all cursor-pointer" cx="550" cy="90" r="4"></circle>
+<circle class="hover:r-6 transition-all cursor-pointer" cx="650" cy="110" r="4"></circle>
+<circle class="hover:r-6 transition-all cursor-pointer" cx="750" cy="60" r="4"></circle>
+</g>
+<!-- X Axis Labels -->
+<g class="text-on-surface-variant font-data-label text-[10px]" fill="currentColor" text-anchor="middle">
+<text x="50" y="295">Jan</text>
+<text x="150" y="295">Feb</text>
+<text x="250" y="295">Mar</text>
+<text x="350" y="295">Apr</text>
+<text x="450" y="295">May</text>
+<text x="550" y="295">Jun</text>
+<text x="650" y="295">Jul</text>
+<text x="750" y="295">Aug</text>
+</g>
+</svg>
+</div>
+</div>
+<!-- Donut Chart: Medication Types -->
+<div class="bg-surface-container rounded-xl p-lg flex flex-col shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-background mb-md">Medication by Volume</h2>
+<div class="flex-1 flex flex-col items-center justify-center relative min-h-[250px]">
+<!-- Custom Donut SVG -->
+<svg class="w-48 h-48 transform -rotate-90" viewbox="0 0 200 200">
+<!-- Macrolides (40%) -->
+<circle class="text-primary" cx="100" cy="100" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502" stroke-dashoffset="301" stroke-width="24"></circle>
+<!-- Tetracyclines (30%) -->
+<circle class="text-secondary" cx="100" cy="100" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502" stroke-dashoffset="351" stroke-dashoffset-base="201" stroke-width="24" transform="rotate(144 100 100)"></circle>
+<!-- Penicillins (20%) -->
+<circle class="text-tertiary" cx="100" cy="100" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502" stroke-dashoffset="401" stroke-dashoffset-base="151" stroke-width="24" transform="rotate(252 100 100)"></circle>
+<!-- Other (10%) -->
+<circle class="text-outline-variant" cx="100" cy="100" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502" stroke-dashoffset="451" stroke-dashoffset-base="101" stroke-width="24" transform="rotate(324 100 100)"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-display-lg text-display-lg text-on-background leading-none">4.2k</span>
+<span class="font-data-label text-data-label text-on-surface-variant">Total Kg</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="mt-md space-y-sm">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded bg-primary"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Macrolides</span>
+</div>
+<span class="font-data-label text-data-label text-on-surface-variant">40%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Tetracyclines</span>
+</div>
+<span class="font-data-label text-data-label text-on-surface-variant">30%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded bg-tertiary"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Penicillins</span>
+</div>
+<span class="font-data-label text-data-label text-on-surface-variant">20%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Other</span>
+</div>
+<span class="font-data-label text-data-label text-on-surface-variant">10%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Row: Regional Benchmarking & Top Performers -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<!-- Regional Benchmarking Bar Chart -->
+<div class="bg-surface-container rounded-xl p-lg flex flex-col shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-background mb-lg">Regional Benchmarking (AMU/PCU)</h2>
+<div class="flex-1 space-y-md">
+<!-- Bar Item -->
+<div>
+<div class="flex justify-between font-body-sm text-body-sm mb-xs">
+<span class="text-on-surface font-semibold">North Region (Your Focussed Area)</span>
+<span class="text-on-surface">32.4</span>
+</div>
+<div class="w-full bg-surface-variant h-4 rounded-sm overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 45%;"></div>
+<div class="w-0.5 h-full bg-surface"></div>
+<div class="bg-outline-variant h-full opacity-50" style="width: 15%;"></div> <!-- Margin to target -->
+</div>
+<span class="font-data-label text-data-label text-on-surface-variant mt-xs block text-right">Target: 45.0</span>
+</div>
+<!-- Bar Item -->
+<div>
+<div class="flex justify-between font-body-sm text-body-sm mb-xs">
+<span class="text-on-surface">Central Region</span>
+<span class="text-on-surface">48.2</span>
+</div>
+<div class="w-full bg-surface-variant h-4 rounded-sm overflow-hidden flex">
+<div class="bg-secondary h-full" style="width: 65%;"></div>
+</div>
+</div>
+<!-- Bar Item -->
+<div>
+<div class="flex justify-between font-body-sm text-body-sm mb-xs">
+<span class="text-on-surface">South Region</span>
+<span class="text-on-surface">55.1</span>
+</div>
+<div class="w-full bg-surface-variant h-4 rounded-sm overflow-hidden flex">
+<div class="bg-tertiary h-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Bar Item -->
+<div>
+<div class="flex justify-between font-body-sm text-body-sm mb-xs">
+<span class="text-on-surface italic text-on-surface-variant">National Average</span>
+<span class="text-on-surface-variant font-semibold">44.8</span>
+</div>
+<div class="w-full bg-surface-variant h-4 rounded-sm overflow-hidden flex">
+<div class="bg-outline h-full" style="width: 60%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Stewardship Table -->
+<div class="bg-surface-container rounded-xl p-lg flex flex-col shadow-sm">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-sm text-headline-sm text-on-background">Top Stewardship Performers</h2>
+<button class="font-data-label text-data-label text-primary hover:text-primary-container transition-colors uppercase tracking-wider">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/30">
+<th class="font-data-label text-data-label text-on-surface-variant py-sm px-xs font-normal">Farm ID</th>
+<th class="font-data-label text-data-label text-on-surface-variant py-sm px-xs font-normal">Score</th>
+<th class="font-data-label text-data-label text-on-surface-variant py-sm px-xs font-normal">Trend</th>
+<th class="font-data-label text-data-label text-on-surface-variant py-sm px-xs font-normal text-right">Last Audit</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm">
+<tr class="hover:bg-primary/5 transition-colors border-b border-outline-variant/10 last:border-0 group cursor-pointer">
+<td class="py-md px-xs font-semibold text-primary">FRM-8902</td>
+<td class="py-md px-xs">
+<div class="flex items-center gap-sm">
+<span class="w-8 text-right">98</span>
+<div class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden"><div class="bg-primary h-full w-[98%]"></div></div>
+</div>
+</td>
+<td class="py-md px-xs text-primary flex items-center"><span class="material-symbols-outlined text-[16px]">arrow_upward</span></td>
+<td class="py-md px-xs text-right text-on-surface-variant">12 Oct 2023</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors border-b border-outline-variant/10 last:border-0 group cursor-pointer">
+<td class="py-md px-xs font-semibold text-primary">FRM-7144</td>
+<td class="py-md px-xs">
+<div class="flex items-center gap-sm">
+<span class="w-8 text-right">94</span>
+<div class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden"><div class="bg-primary h-full w-[94%]"></div></div>
+</div>
+</td>
+<td class="py-md px-xs text-primary flex items-center"><span class="material-symbols-outlined text-[16px]">arrow_upward</span></td>
+<td class="py-md px-xs text-right text-on-surface-variant">05 Oct 2023</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors border-b border-outline-variant/10 last:border-0 group cursor-pointer">
+<td class="py-md px-xs font-semibold text-primary">FRM-1029</td>
+<td class="py-md px-xs">
+<div class="flex items-center gap-sm">
+<span class="w-8 text-right">91</span>
+<div class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden"><div class="bg-primary h-full w-[91%]"></div></div>
+</div>
+</td>
+<td class="py-md px-xs text-outline-variant flex items-center"><span class="material-symbols-outlined text-[16px]">horizontal_rule</span></td>
+<td class="py-md px-xs text-right text-on-surface-variant">28 Sep 2023</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors border-b border-outline-variant/10 last:border-0 group cursor-pointer">
+<td class="py-md px-xs font-semibold text-primary">FRM-4451</td>
+<td class="py-md px-xs">
+<div class="flex items-center gap-sm">
+<span class="w-8 text-right">88</span>
+<div class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden"><div class="bg-secondary h-full w-[88%]"></div></div>
+</div>
+</td>
+<td class="py-md px-xs text-error flex items-center"><span class="material-symbols-outlined text-[16px]">arrow_downward</span></td>
+<td class="py-md px-xs text-right text-on-surface-variant">15 Sep 2023</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

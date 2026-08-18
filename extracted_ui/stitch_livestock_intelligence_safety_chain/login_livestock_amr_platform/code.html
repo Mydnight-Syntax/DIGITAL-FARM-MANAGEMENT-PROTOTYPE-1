@@ -1,0 +1,176 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"tertiary-container":"#6b342d","secondary-fixed-dim":"#6cd3f7","surface-container-high":"#e7e9e5","outline-variant":"#bfc9c3","on-tertiary-fixed":"#380d08","on-tertiary-fixed-variant":"#6e372f","primary-container":"#064e3b","surface":"#f8faf6","secondary-container":"#76dcff","surface-bright":"#f8faf6","on-secondary-container":"#006077","surface-variant":"#e1e3e0","primary":"#003527","inverse-surface":"#2e312f","on-error-container":"#93000a","error":"#ba1a1a","on-error":"#ffffff","tertiary-fixed":"#ffdad5","surface-container":"#eceeeb","on-secondary":"#ffffff","on-primary":"#ffffff","surface-tint":"#2b6954","on-primary-fixed":"#002117","outline":"#707974","tertiary":"#4f1f19","on-tertiary-container":"#ea9e93","primary-fixed-dim":"#95d3ba","on-surface":"#191c1b","secondary":"#006780","secondary-fixed":"#b7eaff","on-surface-variant":"#404944","surface-container-lowest":"#ffffff","primary-fixed":"#b0f0d6","on-primary-container":"#80bea6","on-primary-fixed-variant":"#0b513d","inverse-primary":"#95d3ba","error-container":"#ffdad6","surface-dim":"#d8dbd7","surface-container-low":"#f2f4f1","on-secondary-fixed-variant":"#004e61","on-secondary-fixed":"#001f28","background":"#f8faf6","inverse-on-surface":"#eff1ee","tertiary-fixed-dim":"#ffb4a9","surface-container-highest":"#e1e3e0","on-background":"#191c1b","on-tertiary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"sm":"8px","lg":"24px","margin-desktop":"40px","xs":"4px","margin-mobile":"16px","base":"4px","md":"16px","gutter":"24px","xl":"32px"},"fontFamily":{"headline-sm":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"],"display-lg":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"headline-lg-mobile":["Inter"],"data-label":["JetBrains Mono"],"body-lg":["Inter"]},"fontSize":{"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"data-label":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-on-background flex items-center justify-center min-h-screen"><main class="w-full"><div class="flex flex-col w-full">
+<div class="flex flex-col lg:flex-row w-full min-h-[calc(100vh-var(--header-height,0px))]">
+<!-- Left Side: Branding & Visuals -->
+<div class="relative w-full lg:w-[45%] bg-primary flex flex-col justify-between p-lg lg:p-margin-desktop overflow-hidden group">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-40 mix-blend-luminosity" data-alt="A subtle, high-quality, cinematic image of healthy livestock (cattle or sheep) grazing in a lush, early morning pasture. The lighting is soft and golden, conveying health and vitality. The image should be deeply tinted with Forest Emerald green to serve as a cohesive background texture, allowing text to remain legible. Modern, precise, agricultural intelligence theme." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDdQoHbyMoiGx5C0L9-5AgJPo88v4YxI0ymZcYVHOOlnv7OueSIASEoVrFk_8xl0Y5phPbYOXC-QLrhymEJ2tzzg4dADV17HJF6y4-AJAAOw2K6QT1bD5S8F11NUVyeHxwPdxXHYkRlXOO12D_3FWnS1aUpZYTUMB3Tp4J-gDq4t-jJadOsKW5AfrztgR2PhC2Zp1OMsG8HbV1cNKlgXbBdXYeJgm47DlkomBsJ4cZUZmJNjPuurbk8w')"></div>
+<!-- Gradient Scrim for Readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/50 to-primary/90"></div>
+</div>
+<!-- Header Content -->
+<div class="relative z-10 flex flex-col gap-sm">
+<div class="flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined text-on-primary text-[32px]">security</span>
+<h1 class="font-headline-lg text-headline-lg text-on-primary">Livestock Intelligence</h1>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary-fixed">AMR & MRL Defense Platform</h2>
+<p class="font-body-lg text-body-lg text-inverse-primary max-w-md mt-sm">Prevent antimicrobial misuse. Protect animal health. Secure the food chain.</p>
+</div>
+<!-- Animated Indicators -->
+<div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-md mt-xl lg:mt-auto">
+<!-- Indicator 1 -->
+<div class="flex items-start gap-md p-md bg-surface/5 backdrop-blur-sm rounded-lg border border-primary-fixed/20 hover:bg-surface/10 transition-colors">
+<div class="relative w-8 h-8 flex items-center justify-center rounded-full bg-secondary-container/20 text-secondary-fixed">
+<span class="material-symbols-outlined text-[20px] animate-pulse">monitoring</span>
+<div class="absolute inset-0 border-2 border-secondary-fixed rounded-full animate-ping opacity-20"></div>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-data-label text-data-label text-secondary-fixed tracking-wider uppercase">Active</span>
+<span class="font-body-md text-body-md text-on-primary">AMU Monitoring</span>
+</div>
+</div>
+<!-- Indicator 2 -->
+<div class="flex items-start gap-md p-md bg-surface/5 backdrop-blur-sm rounded-lg border border-primary-fixed/20 hover:bg-surface/10 transition-colors">
+<div class="relative w-8 h-8 flex items-center justify-center rounded-full bg-primary-fixed/20 text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-data-label text-data-label text-primary-fixed tracking-wider uppercase">Verified</span>
+<span class="font-body-md text-body-md text-on-primary">MRL Compliance</span>
+</div>
+</div>
+<!-- Indicator 3 -->
+<div class="flex items-start gap-md p-md bg-surface/5 backdrop-blur-sm rounded-lg border border-primary-fixed/20 hover:bg-surface/10 transition-colors">
+<div class="relative w-8 h-8 flex items-center justify-center rounded-full bg-tertiary-fixed/20 text-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">pets</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-data-label text-data-label text-tertiary-fixed tracking-wider uppercase">Optimal</span>
+<span class="font-body-md text-body-md text-on-primary">Animal Health</span>
+</div>
+</div>
+<!-- Indicator 4 -->
+<div class="flex items-start gap-md p-md bg-surface/5 backdrop-blur-sm rounded-lg border border-primary-fixed/20 hover:bg-surface/10 transition-colors">
+<div class="relative w-8 h-8 flex items-center justify-center rounded-full bg-secondary-fixed/20 text-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-data-label text-data-label text-secondary-fixed tracking-wider uppercase">Secured</span>
+<span class="font-body-md text-body-md text-on-primary">Food Safety</span>
+</div>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-primary-fixed/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/4 -right-24 w-64 h-64 bg-secondary-fixed/10 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+<!-- Right Side: Login Panel -->
+<div class="w-full lg:w-[55%] bg-surface flex flex-col justify-center p-lg lg:p-margin-desktop relative">
+<div class="w-full max-w-md mx-auto flex flex-col gap-xl">
+<!-- Welcome Header -->
+<div class="flex flex-col gap-sm text-center lg:text-left">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Welcome back</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Sign in to your farm intelligence platform.</p>
+</div>
+<!-- Login Form -->
+<form class="flex flex-col gap-lg w-full" id="loginForm">
+<!-- Input Fields -->
+<div class="flex flex-col gap-md">
+<div class="relative group">
+<label class="absolute -top-2 left-3 bg-surface px-1 font-data-label text-data-label text-outline z-10 transition-colors group-focus-within:text-secondary" for="identity">Email or Mobile Number</label>
+<div class="flex items-center w-full min-h-[56px] rounded-lg border border-outline bg-surface px-md transition-all focus-within:border-secondary focus-within:ring-2 focus-within:ring-secondary/20">
+<span class="material-symbols-outlined text-outline mr-sm">person</span>
+<input class="w-full h-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none placeholder:text-outline-variant" id="identity" placeholder="Enter your credentials" type="text"/>
+</div>
+</div>
+<div class="relative group">
+<label class="absolute -top-2 left-3 bg-surface px-1 font-data-label text-data-label text-outline z-10 transition-colors group-focus-within:text-secondary" for="password">Password</label>
+<div class="flex items-center w-full min-h-[56px] rounded-lg border border-outline bg-surface px-md transition-all focus-within:border-secondary focus-within:ring-2 focus-within:ring-secondary/20">
+<span class="material-symbols-outlined text-outline mr-sm">lock</span>
+<input class="w-full h-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none placeholder:text-outline-variant" id="password" placeholder="••••••••" type="password"/>
+<button class="material-symbols-outlined text-outline hover:text-on-surface transition-colors ml-sm" onclick="togglePassword()" type="button">visibility</button>
+</div>
+<div class="flex justify-end mt-xs">
+<a class="font-data-label text-data-label text-secondary hover:text-on-secondary-container transition-colors" href="#">Forgot password?</a>
+</div>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full min-h-[48px] rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-sm hover:bg-on-primary-fixed-variant transition-colors shadow-sm hover:shadow-md relative overflow-hidden group" type="submit">
+<span class="relative z-10">Sign In</span>
+<span class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+<div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</button>
+</form>
+<!-- Divider -->
+<div class="flex items-center w-full gap-md">
+<div class="h-px bg-outline-variant flex-grow"></div>
+<span class="font-data-label text-data-label text-outline uppercase tracking-widest">Or Continue As</span>
+<div class="h-px bg-outline-variant flex-grow"></div>
+</div>
+<!-- Role Selection -->
+<div class="grid grid-cols-2 gap-md w-full">
+<button class="flex flex-col items-center justify-center gap-sm p-md rounded-xl border border-outline-variant bg-surface hover:bg-surface-container hover:border-secondary/50 transition-all group" type="button">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 text-primary flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">agriculture</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Farmer</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-sm p-md rounded-xl border border-outline-variant bg-surface hover:bg-surface-container hover:border-secondary/50 transition-all group" type="button">
+<div class="w-12 h-12 rounded-full bg-secondary-container/10 text-secondary flex items-center justify-center group-hover:bg-secondary-container group-hover:text-on-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">vaccines</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Veterinarian</span>
+</button>
+</div>
+<!-- Footer Link -->
+<div class="mt-xl text-center">
+<a class="inline-flex items-center gap-xs font-body-sm text-body-sm text-outline hover:text-secondary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[16px]">science</span>
+<span class="border-b border-transparent group-hover:border-secondary">Laboratory / Regulator Login</span>
+<span class="material-symbols-outlined text-[16px] opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Minimal decorative lines for desktop -->
+<div class="hidden lg:block absolute top-0 right-0 w-32 h-full pointer-events-none overflow-hidden opacity-20">
+<div class="w-px h-full bg-gradient-to-b from-transparent via-outline to-transparent absolute right-8"></div>
+<div class="w-px h-full bg-gradient-to-b from-transparent via-outline to-transparent absolute right-16 opacity-50 transform translate-y-12"></div>
+<div class="w-px h-full bg-gradient-to-b from-transparent via-outline to-transparent absolute right-24 opacity-25 transform -translate-y-24"></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const icon = event.currentTarget;
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            icon.textContent = 'visibility_off';
+        } else {
+            passwordInput.type = 'password';
+            icon.textContent = 'visibility';
+        }
+    }
+    
+    // Simple form submission effect
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span><span class="relative z-10">Authenticating...</span>';
+        btn.disabled = true;
+        btn.classList.add('opacity-80');
+        
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            btn.classList.remove('opacity-80');
+        }, 1500);
+    });
+</script></main></body></html>

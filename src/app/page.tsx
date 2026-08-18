@@ -1,0 +1,91 @@
+"use client";
+
+import React, { useState } from 'react';
+import { useApp } from '@/context/AppContext';
+import { Navbar } from '@/components/layout/Navbar';
+import { Sidebar } from '@/components/layout/Sidebar';
+import { RoleSelectionScreen } from '@/components/portals/RoleSelectionScreen';
+import { FarmerPortal } from '@/components/portals/FarmerPortal';
+import { VeterinarianPortal } from '@/components/portals/VeterinarianPortal';
+import { RegulatorPortal } from '@/components/portals/RegulatorPortal';
+import { DigitalPassportModal } from '@/components/modals/DigitalPassportModal';
+import { CreatePrescriptionModal } from '@/components/modals/CreatePrescriptionModal';
+import { QRScannerModal } from '@/components/modals/QRScannerModal';
+import { TraceabilityModal } from '@/components/modals/TraceabilityModal';
+import { RegisterAnimalModal } from '@/components/modals/RegisterAnimalModal';
+import { Smartphone, Monitor, ShieldCheck } from 'lucide-react';
+
+export default function Home() {
+  const { userRole, viewMode, setViewMode, activeModal } = useApp();
+  const [activeTab, setActiveTab] = useState('dashboard');
+
+  return (
+    <div className="min-h-screen bg-background flex flex-col font-sans">
+      
+      {/* Top Bar Navigation */}
+      <Navbar />
+
+      {/* Main Body */}
+      {userRole === 'ROLE_SELECT' ? (
+        <RoleSelectionScreen />
+      ) : (
+        <div className="flex flex-1 w-full max-w-[1440px] mx-auto">
+          
+          {/* Sidebar Navigation */}
+          {viewMode === 'DESKTOP' && (
+            <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+          )}
+
+          {/* Core Content Area */}
+          <main className="flex-1 p-4 md:p-8 min-w-0">
+            
+            {/* Mobile Device Mockup Frame Container if Judge View Mode is Enabled */}
+            {viewMode === 'MOBILE_FRAME' ? (
+              <div className="py-6 flex flex-col items-center">
+                
+                <div className="mb-4 flex items-center justify-between w-full max-w-[430px] px-2 text-xs font-mono">
+                  <span className="text-primary font-bold">Mobile Native App Frame</span>
+                  <button 
+                    onClick={() => setViewMode('DESKTOP')}
+                    className="text-secondary hover:underline flex items-center gap-1 font-semibold"
+                  >
+                    <Monitor className="w-3.5 h-3.5" />
+                    <span>Back to Full Desktop View</span>
+                  </button>
+                </div>
+
+                {/* iPhone/Mobile Frame */}
+                <div className="mobile-frame-container bg-surface border-4 border-outline-variant/30 overflow-y-auto">
+                  <div className="mobile-notch" />
+                  <div className="pt-10 p-4 space-y-6">
+                    {userRole === 'FARMER' && <FarmerPortal />}
+                    {userRole === 'VETERINARIAN' && <VeterinarianPortal />}
+                    {userRole === 'REGULATOR' && <RegulatorPortal />}
+                  </div>
+                </div>
+
+              </div>
+            ) : (
+              // Desktop Viewport Layout
+              <>
+                {userRole === 'FARMER' && <FarmerPortal />}
+                {userRole === 'VETERINARIAN' && <VeterinarianPortal />}
+                {userRole === 'REGULATOR' && <RegulatorPortal />}
+              </>
+            )}
+
+          </main>
+
+        </div>
+      )}
+
+      {/* Active Modal Engine */}
+      {activeModal === 'DIGITAL_PASSPORT' && <DigitalPassportModal />}
+      {activeModal === 'CREATE_PRESCRIPTION' && <CreatePrescriptionModal />}
+      {activeModal === 'QR_SCANNER' && <QRScannerModal />}
+      {activeModal === 'TRACEABILITY' && <TraceabilityModal />}
+      {activeModal === 'REGISTER_ANIMAL' && <RegisterAnimalModal />}
+
+    </div>
+  );
+}

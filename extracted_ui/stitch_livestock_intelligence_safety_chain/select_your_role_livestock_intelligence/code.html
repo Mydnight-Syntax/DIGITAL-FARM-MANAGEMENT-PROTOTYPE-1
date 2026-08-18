@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"tertiary-container":"#6b342d","secondary-fixed-dim":"#6cd3f7","surface-container-high":"#e7e9e5","outline-variant":"#bfc9c3","on-tertiary-fixed":"#380d08","on-tertiary-fixed-variant":"#6e372f","primary-container":"#064e3b","surface":"#f8faf6","secondary-container":"#76dcff","surface-bright":"#f8faf6","on-secondary-container":"#006077","surface-variant":"#e1e3e0","primary":"#003527","inverse-surface":"#2e312f","on-error-container":"#93000a","error":"#ba1a1a","on-error":"#ffffff","tertiary-fixed":"#ffdad5","surface-container":"#eceeeb","on-secondary":"#ffffff","on-primary":"#ffffff","surface-tint":"#2b6954","on-primary-fixed":"#002117","outline":"#707974","tertiary":"#4f1f19","on-tertiary-container":"#ea9e93","primary-fixed-dim":"#95d3ba","on-surface":"#191c1b","secondary":"#006780","secondary-fixed":"#b7eaff","on-surface-variant":"#404944","surface-container-lowest":"#ffffff","primary-fixed":"#b0f0d6","on-primary-container":"#80bea6","on-primary-fixed-variant":"#0b513d","inverse-primary":"#95d3ba","error-container":"#ffdad6","surface-dim":"#d8dbd7","surface-container-low":"#f2f4f1","on-secondary-fixed-variant":"#004e61","on-secondary-fixed":"#001f28","background":"#f8faf6","inverse-on-surface":"#eff1ee","tertiary-fixed-dim":"#ffb4a9","surface-container-highest":"#e1e3e0","on-background":"#191c1b","on-tertiary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"sm":"8px","lg":"24px","margin-desktop":"40px","xs":"4px","margin-mobile":"16px","base":"4px","md":"16px","gutter":"24px","xl":"32px"},"fontFamily":{"headline-sm":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"],"display-lg":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"headline-lg-mobile":["Inter"],"data-label":["JetBrains Mono"],"body-lg":["Inter"]},"fontSize":{"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"data-label":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"></head><body class="bg-background font-body-md text-on-background flex items-center justify-center min-h-screen"><main class="w-full"><div class="flex flex-col w-full h-full justify-center items-center px-4 py-8 relative">
+<!-- Background Design Element -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<svg class="absolute w-full h-full opacity-5 text-primary" preserveAspectRatio="none" viewBox="0 0 100 100">
+<path d="M0,0 L100,0 L100,100 L0,100 Z M50,0 C77.6,0 100,22.4 100,50 C100,77.6 77.6,100 50,100 C22.4,100 0,77.6 0,50 C0,22.4 22.4,0 50,0 Z" fill="currentColor"></path>
+</svg>
+</div>
+<!-- Header Section -->
+<div class="flex flex-col items-center justify-center text-center max-w-2xl w-full mb-12 z-10">
+<div class="h-16 w-16 bg-surface-container rounded-full flex items-center justify-center shadow-sm mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-background mb-4">Select Your Role</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">
+            Welcome to the Emerald Sentinel platform. Please select your professional portal to access specialized tools and analytics.
+        </p>
+</div>
+<!-- Role Selection Cards -->
+<div class="flex flex-col md:flex-row gap-8 w-full max-w-4xl z-10">
+<!-- Farmer Card -->
+<div class="flex-1 group flex flex-col bg-surface-container rounded-[1.5rem] shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+<!-- Decorative gradient top -->
+<div class="absolute top-0 left-0 right-0 h-2 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+<div class="p-8 flex flex-col h-full flex-grow">
+<div class="flex items-start justify-between mb-8">
+<div class="w-16 h-16 bg-surface flex items-center justify-center rounded-xl shadow-sm text-primary group-hover:text-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+</div>
+<span class="font-data-label text-data-label text-on-surface-variant uppercase tracking-wider bg-surface-variant px-3 py-1 rounded-full">Primary</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4 group-hover:text-primary transition-colors">Farmer</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                    Manage animals, treatments, withdrawal periods, and overall farm health analytics from a single, centralized dashboard.
+                </p>
+<button class="w-full bg-primary text-on-primary font-headline-sm text-headline-sm py-4 rounded-xl shadow-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-2">
+                    Enter Farmer Portal
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Veterinarian Card -->
+<div class="flex-1 group flex flex-col bg-surface-container rounded-[1.5rem] shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+<!-- Decorative gradient top -->
+<div class="absolute top-0 left-0 right-0 h-2 bg-secondary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+<div class="p-8 flex flex-col h-full flex-grow">
+<div class="flex items-start justify-between mb-8">
+<div class="w-16 h-16 bg-surface flex items-center justify-center rounded-xl shadow-sm text-secondary group-hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<span class="font-data-label text-data-label text-on-surface-variant uppercase tracking-wider bg-surface-variant px-3 py-1 rounded-full">Clinical</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4 group-hover:text-secondary transition-colors">Veterinarian</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                    Manage complex animal cases, issue prescriptions, and monitor antimicrobial stewardship and resistance trends.
+                </p>
+<button class="w-full bg-surface text-primary font-headline-sm text-headline-sm py-4 rounded-xl shadow-sm hover:bg-surface-dim transition-colors flex items-center justify-center gap-2 group-hover:shadow-md">
+                    Enter Veterinary Portal
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Government Official Card -->
+<div class="flex-1 group flex flex-col bg-surface-container rounded-[1.5rem] shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+    <!-- Decorative gradient top -->
+    <div class="absolute top-0 left-0 right-0 h-2 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+    <div class="p-8 flex flex-col h-full flex-grow">
+        <div class="flex items-start justify-between mb-8">
+            <div class="w-16 h-16 bg-surface flex items-center justify-center rounded-xl shadow-sm text-primary group-hover:text-secondary-fixed transition-colors">
+                <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+            </div>
+            <span class="font-data-label text-data-label text-on-surface-variant uppercase tracking-wider bg-surface-variant px-3 py-1 rounded-full">Regulatory</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg text-on-background mb-4 group-hover:text-primary transition-colors">Government Official</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+            Monitor regional AMR trends, oversee MRL compliance, and manage food safety audits.
+        </p>
+        <button class="w-full bg-surface text-primary font-headline-sm text-headline-sm py-4 rounded-xl shadow-sm hover:bg-surface-dim transition-colors flex items-center justify-center gap-2 group-hover:shadow-md">
+            Enter Regulator Portal
+            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+        </button>
+    </div>
+</div></div>
+<!-- Secondary Login Options -->
+<div class="mt-16 text-center z-10 flex flex-col items-center">
+<div class="h-px w-24 bg-outline-variant mb-6"></div>
+<button class="text-primary hover:text-primary-container font-headline-sm text-headline-sm flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined">science</span>
+            Laboratory / Regulator Login
+        </button>
+</div>
+</div></main>
+
+</body></html>
