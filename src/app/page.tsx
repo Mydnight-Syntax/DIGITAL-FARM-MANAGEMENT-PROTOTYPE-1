@@ -13,11 +13,41 @@ import { CreatePrescriptionModal } from '@/components/modals/CreatePrescriptionM
 import { QRScannerModal } from '@/components/modals/QRScannerModal';
 import { TraceabilityModal } from '@/components/modals/TraceabilityModal';
 import { RegisterAnimalModal } from '@/components/modals/RegisterAnimalModal';
-import { Smartphone, Monitor, ShieldCheck } from 'lucide-react';
+import { UserAuthModal } from '@/components/modals/UserAuthModal';
+import { WithdrawalMonitorView } from '@/components/views/WithdrawalMonitorView';
+import { MRLComplianceView } from '@/components/views/MRLComplianceView';
+import { AMRAnalyticsView } from '@/components/views/AMRAnalyticsView';
+import { PrescriptionsView } from '@/components/views/PrescriptionsView';
+import { LivestockPassportsView } from '@/components/views/LivestockPassportsView';
+import { Smartphone, Monitor } from 'lucide-react';
 
 export default function Home() {
   const { userRole, viewMode, setViewMode, activeModal } = useApp();
   const [activeTab, setActiveTab] = useState('dashboard');
+
+  const renderActiveContent = () => {
+    switch (activeTab) {
+      case 'animals':
+        return <LivestockPassportsView />;
+      case 'prescriptions':
+        return <PrescriptionsView />;
+      case 'withdrawals':
+        return <WithdrawalMonitorView />;
+      case 'mrl-testing':
+        return <MRLComplianceView />;
+      case 'analytics':
+        return <AMRAnalyticsView />;
+      case 'dashboard':
+      default:
+        return (
+          <>
+            {userRole === 'FARMER' && <FarmerPortal />}
+            {userRole === 'VETERINARIAN' && <VeterinarianPortal />}
+            {userRole === 'REGULATOR' && <RegulatorPortal />}
+          </>
+        );
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
@@ -58,20 +88,14 @@ export default function Home() {
                 <div className="mobile-frame-container bg-surface border-4 border-outline-variant/30 overflow-y-auto">
                   <div className="mobile-notch" />
                   <div className="pt-10 p-4 space-y-6">
-                    {userRole === 'FARMER' && <FarmerPortal />}
-                    {userRole === 'VETERINARIAN' && <VeterinarianPortal />}
-                    {userRole === 'REGULATOR' && <RegulatorPortal />}
+                    {renderActiveContent()}
                   </div>
                 </div>
 
               </div>
             ) : (
               // Desktop Viewport Layout
-              <>
-                {userRole === 'FARMER' && <FarmerPortal />}
-                {userRole === 'VETERINARIAN' && <VeterinarianPortal />}
-                {userRole === 'REGULATOR' && <RegulatorPortal />}
-              </>
+              renderActiveContent()
             )}
 
           </main>
@@ -85,6 +109,7 @@ export default function Home() {
       {activeModal === 'QR_SCANNER' && <QRScannerModal />}
       {activeModal === 'TRACEABILITY' && <TraceabilityModal />}
       {activeModal === 'REGISTER_ANIMAL' && <RegisterAnimalModal />}
+      {activeModal === 'USER_AUTH' && <UserAuthModal />}
 
     </div>
   );

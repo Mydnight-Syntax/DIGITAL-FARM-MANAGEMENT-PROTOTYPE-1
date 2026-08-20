@@ -131,7 +131,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
       {/* System Footer Badge */}
       <div className="p-4 border-t border-outline-variant/30 text-center">
         <div className="bg-surface-container rounded-xl p-2.5 text-[11px] text-on-surface-variant font-mono">
-          <span className="font-bold text-primary">Emerald Sentinel v2.4</span>
+          <span className="font-bold text-primary">Krishinode Sentinel v2.4</span>
           <br />
           AMR & MRL Chain Active
         </div>

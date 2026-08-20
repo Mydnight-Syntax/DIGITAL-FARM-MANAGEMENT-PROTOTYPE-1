@@ -3,8 +3,8 @@ import './globals.css';
 import { AppProvider } from '@/context/AppContext';
 
 export const metadata: Metadata = {
-  title: 'Emerald Sentinel — Livestock Intelligence & AMR Safety Chain',
-  description: 'Hackathon Prototype for Livestock Health, Digital Animal Passports, AMR Surveillance, MRL Compliance, and Farm-to-Fork Traceability.',
+  title: 'KRISHINODE: PLATFORM FOR FARMERS , VETS AND GOVERNMENT ORGANISERS',
+  description: 'An application for Livestock Health, Digital Animal Passports, AMR Surveillance, MRL Compliance, and Farm-to-Fork Traceability.',
 };
 
 export default function RootLayout({

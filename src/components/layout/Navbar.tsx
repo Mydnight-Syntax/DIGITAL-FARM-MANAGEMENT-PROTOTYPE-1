@@ -14,7 +14,8 @@ import {
   UserCheck, 
   Stethoscope, 
   Building2, 
-  Layers
+  Layers,
+  LogIn
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -39,9 +40,9 @@ export const Navbar: React.FC = () => {
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <span className="font-bold text-lg text-primary tracking-tight font-display">EMERALD SENTINEL</span>
+              <span className="font-bold text-lg text-primary tracking-tight font-display">KRISHINODE SENTINEL</span>
               <span className="bg-primary-container text-on-primary-container text-[10px] font-mono px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold">
-                Hackathon Pro
+                Pro
               </span>
             </div>
             <span className="text-[11px] text-on-surface-variant font-mono uppercase tracking-widest">
@@ -124,7 +125,7 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {/* Device Frame Viewport Toggle (Hackathon Judge Mode) */}
+          {/* Device Frame Viewport Toggle (Judge Mode) */}
           <div className="flex items-center bg-surface-container p-1 rounded-xl border border-outline-variant/40">
             <button
               onClick={() => setViewMode('DESKTOP')}
@@ -144,13 +145,23 @@ export const Navbar: React.FC = () => {
                   ? 'bg-surface text-primary shadow-sm'
                   : 'text-on-surface-variant hover:text-on-surface'
               }`}
-              title="Mobile App Frame Preview Mode (Hackathon Showcase)"
+              title="Mobile App Frame Preview Mode"
             >
               <Smartphone className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Notifications */}
+          {/* User Auth / Login Portal */}
+          <button 
+            onClick={() => openModal('USER_AUTH')}
+            className="flex items-center gap-1 bg-surface-container hover:bg-surface-container-high text-on-surface font-medium text-xs px-3 py-2 rounded-xl border border-outline-variant/40 transition-colors shadow-sm"
+            title="User Sign In / Registration Portal"
+          >
+            <LogIn className="w-4 h-4 text-secondary" />
+            <span className="hidden sm:inline">Sign In</span>
+          </button>
+
+          {/* Notifications / Traceability */}
           <button 
             onClick={() => openModal('TRACEABILITY')}
             className="relative p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors"

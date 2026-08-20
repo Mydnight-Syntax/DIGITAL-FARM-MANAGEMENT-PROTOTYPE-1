@@ -11,7 +11,8 @@ import {
   ShieldAlert, 
   Layers, 
   Sparkles,
-  QrCode
+  QrCode,
+  UserCheck
 } from 'lucide-react';
 
 export const RoleSelectionScreen: React.FC = () => {
@@ -40,7 +41,7 @@ export const RoleSelectionScreen: React.FC = () => {
           <span>Hackathon Showcase Prototype</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-extrabold text-on-background tracking-tight mb-4 font-display">
-          Emerald Sentinel
+          Krishinode Sentinel
         </h1>
         <p className="text-lg text-on-surface-variant max-w-lg">
           Livestock Intelligence & Antimicrobial Resistance (AMR) Safety Chain Platform. Select your role portal to get started.
@@ -58,14 +59,12 @@ export const RoleSelectionScreen: React.FC = () => {
               <Tractor className="w-8 h-8" />
             </div>
             <span className="font-mono text-xs text-on-surface-variant uppercase tracking-wider bg-surface-variant px-3 py-1 rounded-full font-semibold">
-              Farm Level
+              Farmer View
             </span>
           </div>
-          <h2 className="text-2xl font-bold text-on-background mb-3 group-hover:text-primary transition-colors">
-            Farmer Portal
-          </h2>
-          <p className="text-sm text-on-surface-variant mb-8 flex-grow leading-relaxed">
-            Manage livestock, digital animal passports, track active drug withdrawal periods, milk/meat safety alerts, and MRL compliance.
+          <h2 className="text-2xl font-bold text-on-surface mb-2 font-display">Farmer Portal</h2>
+          <p className="text-sm text-on-surface-variant mb-6 flex-1">
+            Manage livestock passports, monitor drug withdrawal countdown timers, track MRL safety status, and log animal health.
           </p>
           <button
             onClick={() => handleSelectRole('FARMER')}
@@ -84,25 +83,23 @@ export const RoleSelectionScreen: React.FC = () => {
               <Stethoscope className="w-8 h-8" />
             </div>
             <span className="font-mono text-xs text-on-surface-variant uppercase tracking-wider bg-surface-variant px-3 py-1 rounded-full font-semibold">
-              Clinical
+              Clinical View
             </span>
           </div>
-          <h2 className="text-2xl font-bold text-on-background mb-3 group-hover:text-secondary transition-colors">
-            Veterinarian Portal
-          </h2>
-          <p className="text-sm text-on-surface-variant mb-8 flex-grow leading-relaxed">
-            Issue digital prescriptions, set automated withdrawal periods, monitor antimicrobial stewardship (AMU), and manage animal cases.
+          <h2 className="text-2xl font-bold text-on-surface mb-2 font-display">Veterinarian Portal</h2>
+          <p className="text-sm text-on-surface-variant mb-6 flex-1">
+            Issue digital e-prescriptions, auto-calculate antimicrobial withdrawal periods, and audit AMU stewardship records.
           </p>
           <button
             onClick={() => handleSelectRole('VETERINARIAN')}
             className="w-full bg-secondary text-on-secondary font-semibold py-3.5 rounded-2xl shadow-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors flex items-center justify-center gap-2 group-hover:gap-3"
           >
-            <span>Enter Veterinary Command</span>
+            <span>Enter Vet Portal</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Government Official Card */}
+        {/* Regulator Card */}
         <div className="group flex flex-col bg-surface-container rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-300 relative overflow-hidden border border-outline-variant/40">
           <div className="absolute top-0 left-0 right-0 h-2 bg-tertiary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           <div className="flex items-start justify-between mb-8">
@@ -110,13 +107,11 @@ export const RoleSelectionScreen: React.FC = () => {
               <Building2 className="w-8 h-8" />
             </div>
             <span className="font-mono text-xs text-on-surface-variant uppercase tracking-wider bg-surface-variant px-3 py-1 rounded-full font-semibold">
-              Regulatory
+              Oversight View
             </span>
           </div>
-          <h2 className="text-2xl font-bold text-on-background mb-3 group-hover:text-tertiary transition-colors">
-            Government & Regulator
-          </h2>
-          <p className="text-sm text-on-surface-variant mb-8 flex-grow leading-relaxed">
+          <h2 className="text-2xl font-bold text-on-surface mb-2 font-display">Regulator & MRL</h2>
+          <p className="text-sm text-on-surface-variant mb-6 flex-1">
             Monitor regional AMR surveillance heatmaps, lab MRL test compliance, food safety audits, and farm-to-fork supply chain traceability.
           </p>
           <button
@@ -132,6 +127,13 @@ export const RoleSelectionScreen: React.FC = () => {
 
       {/* Secondary Demo Buttons */}
       <div className="mt-12 text-center z-10 flex flex-wrap items-center justify-center gap-4">
+        <button
+          onClick={() => openModal('USER_AUTH')}
+          className="flex items-center gap-2 px-4 py-2 bg-surface rounded-full text-xs font-semibold text-on-surface border border-outline-variant/40 hover:bg-surface-container transition-colors shadow-sm"
+        >
+          <UserCheck className="w-4 h-4 text-secondary" />
+          <span>New Registration / Sign In</span>
+        </button>
         <button
           onClick={() => openModal('QR_SCANNER')}
           className="flex items-center gap-2 px-4 py-2 bg-surface rounded-full text-xs font-semibold text-primary border border-outline-variant/40 hover:bg-surface-container transition-colors shadow-sm"

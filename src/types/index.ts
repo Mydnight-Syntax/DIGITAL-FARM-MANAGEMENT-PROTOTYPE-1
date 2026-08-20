@@ -87,4 +87,6 @@ export type ModalType =
   | 'QR_SCANNER' 
   | 'TRACEABILITY' 
   | 'MRL_DETAILS' 
-  | 'REGISTER_ANIMAL';
+  | 'REGISTER_ANIMAL'
+  | 'USER_AUTH';
+

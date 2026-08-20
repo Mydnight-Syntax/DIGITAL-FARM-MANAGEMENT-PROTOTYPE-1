@@ -32,7 +32,7 @@ const INITIAL_ANIMALS: Animal[] = [
       { name: 'Brucellosis Strain 19', date: '2025-11-10', vet: 'Dr. Ananya Sharma' },
       { name: 'HS + BQ Combined', date: '2025-05-20', vet: 'Dr. Rajesh Patel' }
     ],
-    qrCode: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=EMERALD-PASSPORT-RFID-840-9921'
+    qrCode: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=KRISHINODE-PASSPORT-RFID-840-9921'
   },
   {
     id: 'anim-2',
@@ -50,7 +50,7 @@ const INITIAL_ANIMALS: Animal[] = [
     vaccines: [
       { name: 'FMD Vaccine', date: '2026-06-01', vet: 'Dr. Ananya Sharma' }
     ],
-    qrCode: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=EMERALD-PASSPORT-RFID-840-9922'
+    qrCode: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=KRISHINODE-PASSPORT-RFID-840-9922'
   },
   {
     id: 'anim-3',
@@ -68,7 +68,7 @@ const INITIAL_ANIMALS: Animal[] = [
     vaccines: [
       { name: 'Mastitis Guard', date: '2026-07-20', vet: 'Dr. Ananya Sharma' }
     ],
-    qrCode: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=EMERALD-PASSPORT-RFID-840-9923'
+    qrCode: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=KRISHINODE-PASSPORT-RFID-840-9923'
   },
   {
     id: 'anim-4',
@@ -86,7 +86,7 @@ const INITIAL_ANIMALS: Animal[] = [
     vaccines: [
       { name: 'Rabies Vax', date: '2026-04-10', vet: 'Dr. Ananya Sharma' }
     ],
-    qrCode: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=EMERALD-PASSPORT-RFID-840-9924'
+    qrCode: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=KRISHINODE-PASSPORT-RFID-840-9924'
   }
 ];
 
@@ -263,7 +263,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const addAnimal = (newAnim: Omit<Animal, 'id' | 'qrCode'>) => {
     const newId = `anim-${Date.now()}`;
-    const qrCode = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=EMERALD-PASSPORT-${newAnim.tagId}`;
+    const qrCode = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=KRISHINODE-PASSPORT-${newAnim.tagId}`;
     const created: Animal = {
       ...newAnim,
       id: newId,
