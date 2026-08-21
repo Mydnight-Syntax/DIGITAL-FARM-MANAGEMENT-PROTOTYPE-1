@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useApp } from '@/context/AppContext';
-import { UserRole, ViewMode } from '@/types';
+import { ViewMode } from '@/types';
 import { 
   ShieldCheck, 
   Smartphone, 
@@ -11,17 +11,21 @@ import {
   Plus, 
   Search, 
   Bell, 
-  UserCheck, 
-  Stethoscope, 
-  Building2, 
   Layers,
-  LogIn
+  LogIn,
+  LogOut,
+  UserCheck,
+  User
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const { 
-    userRole, 
-    setUserRole, 
+    isAuthenticated,
+    currentUser,
+    userRole,
+    selectRoleForAuth,
+    logoutUser,
+    goToRoleSelection,
     viewMode, 
     setViewMode, 
     openModal, 
@@ -34,7 +38,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-4 md:px-6 h-20 flex items-center justify-between gap-4">
         
         {/* Brand Section */}
-        <div className="flex items-center gap-3 cursor-pointer" onClick={() => setUserRole('ROLE_SELECT')}>
+        <div className="flex items-center gap-3 cursor-pointer" onClick={goToRoleSelection} title="Return to Role Selection Screen">
           <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-md">
             <ShieldCheck className="w-6 h-6 text-primary-fixed" />
           </div>
@@ -67,43 +71,6 @@ export const Navbar: React.FC = () => {
 
         {/* Role Switcher & Controls */}
         <div className="flex items-center gap-3">
-          
-          {/* Role Navigation Pills */}
-          <div className="hidden lg:flex items-center bg-surface-container rounded-full p-1 border border-outline-variant/30">
-            <button
-              onClick={() => setUserRole('FARMER')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                userRole === 'FARMER'
-                  ? 'bg-primary text-on-primary shadow-sm'
-                  : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
-              }`}
-            >
-              <UserCheck className="w-3.5 h-3.5" />
-              Farmer Portal
-            </button>
-            <button
-              onClick={() => setUserRole('VETERINARIAN')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                userRole === 'VETERINARIAN'
-                  ? 'bg-secondary text-on-secondary shadow-sm'
-                  : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
-              }`}
-            >
-              <Stethoscope className="w-3.5 h-3.5" />
-              Veterinarian
-            </button>
-            <button
-              onClick={() => setUserRole('REGULATOR')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                userRole === 'REGULATOR'
-                  ? 'bg-tertiary-container text-on-tertiary-container shadow-sm'
-                  : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
-              }`}
-            >
-              <Building2 className="w-3.5 h-3.5" />
-              Regulator / MRL
-            </button>
-          </div>
 
           {/* Quick Actions */}
           <div className="flex items-center gap-2">
@@ -151,15 +118,36 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {/* User Auth / Login Portal */}
-          <button 
-            onClick={() => openModal('USER_AUTH')}
-            className="flex items-center gap-1 bg-surface-container hover:bg-surface-container-high text-on-surface font-medium text-xs px-3 py-2 rounded-xl border border-outline-variant/40 transition-colors shadow-sm"
-            title="User Sign In / Registration Portal"
-          >
-            <LogIn className="w-4 h-4 text-secondary" />
-            <span className="hidden sm:inline">Sign In</span>
-          </button>
+          {/* User Auth / Profile Status */}
+          {isAuthenticated && currentUser ? (
+            <div className="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-xl border border-outline-variant/40">
+              <div className="w-7 h-7 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center font-bold text-xs">
+                {currentUser.name.charAt(0)}
+              </div>
+              <div className="hidden lg:flex flex-col text-left">
+                <span className="text-xs font-bold text-on-surface leading-none">{currentUser.name}</span>
+                <span className="text-[10px] text-primary font-mono font-semibold uppercase mt-0.5">
+                  {currentUser.role}
+                </span>
+              </div>
+              <button
+                onClick={logoutUser}
+                className="p-1 text-on-surface-variant hover:text-error transition-colors ml-1"
+                title="Sign Out & Return to Role Selection"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
+            </div>
+          ) : (
+            <button 
+              onClick={() => selectRoleForAuth('FARMER')}
+              className="flex items-center gap-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-medium text-xs px-3 py-2 rounded-xl border border-outline-variant/40 transition-colors shadow-sm"
+              title="User Sign In / Registration Portal"
+            >
+              <LogIn className="w-4 h-4 text-secondary" />
+              <span className="hidden sm:inline">Sign In</span>
+            </button>
+          )}
 
           {/* Notifications / Traceability */}
           <button 

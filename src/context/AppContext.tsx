@@ -3,6 +3,8 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { 
   UserRole, 
+  AuthScreenState,
+  UserProfile,
   ViewMode, 
   Animal, 
   Prescription, 
@@ -213,6 +215,16 @@ const INITIAL_AMR_METRICS: AMRMetric[] = [
 interface AppContextType {
   userRole: UserRole;
   setUserRole: (role: UserRole) => void;
+  pendingRole: UserRole;
+  setPendingRole: (role: UserRole) => void;
+  authScreenState: AuthScreenState;
+  setAuthScreenState: (state: AuthScreenState) => void;
+  isAuthenticated: boolean;
+  currentUser: UserProfile | null;
+  selectRoleForAuth: (role: UserRole) => void;
+  authenticateUser: (role?: UserRole, profile?: Partial<UserProfile>) => void;
+  logoutUser: () => void;
+  goToRoleSelection: () => void;
   viewMode: ViewMode;
   setViewMode: (mode: ViewMode) => void;
   animals: Animal[];
@@ -236,7 +248,12 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [userRole, setUserRole] = useState<UserRole>('ROLE_SELECT');
+  const [userRole, setUserRoleState] = useState<UserRole>('ROLE_SELECT');
+  const [pendingRole, setPendingRole] = useState<UserRole>('FARMER');
+  const [authScreenState, setAuthScreenState] = useState<AuthScreenState>('ROLE_SELECTION');
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
+
   const [viewMode, setViewMode] = useState<ViewMode>('DESKTOP');
   const [animals, setAnimals] = useState<Animal[]>(INITIAL_ANIMALS);
   const [prescriptions, setPrescriptions] = useState<Prescription[]>(INITIAL_PRESCRIPTIONS);
@@ -249,6 +266,70 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [selectedPrescription, setSelectedPrescription] = useState<Prescription | null>(null);
   const [selectedMRLTest, setSelectedMRLTest] = useState<MRLTest | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isDbConnected, setIsDbConnected] = useState(false);
+
+  // Initialize local PostgreSQL schema from schema.sql on app launch
+  useEffect(() => {
+    async function initDb() {
+      try {
+        const initRes = await fetch('/api/db/init', { method: 'POST' });
+        const initData = await initRes.json();
+        if (initData.success) {
+          setIsDbConnected(true);
+          // Sync database state
+          const syncRes = await fetch('/api/db/sync');
+          const syncData = await syncRes.json();
+          if (syncData.success && syncData.data) {
+            console.log('Synchronized with local PostgreSQL database schema.');
+          }
+        }
+      } catch (err) {
+        console.warn('PostgreSQL local server connection fallback active:', err);
+      }
+    }
+    initDb();
+  }, []);
+
+  const setUserRole = (role: UserRole) => {
+    setUserRoleState(role);
+    if (role === 'ROLE_SELECT') {
+      setAuthScreenState('ROLE_SELECTION');
+      setIsAuthenticated(false);
+    } else {
+      setAuthScreenState('DASHBOARD');
+      setIsAuthenticated(true);
+    }
+  };
+
+  const selectRoleForAuth = (role: UserRole) => {
+    const targetRole = role === 'ROLE_SELECT' ? 'FARMER' : role;
+    setPendingRole(targetRole);
+    setAuthScreenState('AUTH_PAGE');
+  };
+
+  const authenticateUser = (targetRole?: UserRole, profile?: Partial<UserProfile>) => {
+    const roleToSet = targetRole || pendingRole;
+    setUserRoleState(roleToSet);
+    setIsAuthenticated(true);
+    setCurrentUser({
+      name: profile?.name || (roleToSet === 'FARMER' ? 'Rajesh Kumar' : roleToSet === 'VETERINARIAN' ? 'Dr. Ananya Sharma' : 'Officer Suresh Mehta'),
+      email: profile?.email || (roleToSet === 'FARMER' ? 'rajesh@greenvalley.in' : roleToSet === 'VETERINARIAN' ? 'ananya@vetcare.in' : 'suresh.mehta@fssai.gov.in'),
+      role: roleToSet,
+      identifier: profile?.identifier || (roleToSet === 'FARMER' ? 'FARM-GV-992' : roleToSet === 'VETERINARIAN' ? 'VET-IN-2022-8841' : 'GOVT-FSSAI-4019')
+    });
+    setAuthScreenState('DASHBOARD');
+  };
+
+  const logoutUser = () => {
+    setIsAuthenticated(false);
+    setCurrentUser(null);
+    setUserRoleState('ROLE_SELECT');
+    setAuthScreenState('ROLE_SELECTION');
+  };
+
+  const goToRoleSelection = () => {
+    setAuthScreenState('ROLE_SELECTION');
+  };
 
   const openModal = (type: ModalType, payload?: { animal?: Animal; prescription?: Prescription; mrlTest?: MRLTest }) => {
     setActiveModal(type);
@@ -333,6 +414,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       value={{
         userRole,
         setUserRole,
+        pendingRole,
+        setPendingRole,
+        authScreenState,
+        setAuthScreenState,
+        isAuthenticated,
+        currentUser,
+        selectRoleForAuth,
+        authenticateUser,
+        logoutUser,
+        goToRoleSelection,
         viewMode,
         setViewMode,
         animals,

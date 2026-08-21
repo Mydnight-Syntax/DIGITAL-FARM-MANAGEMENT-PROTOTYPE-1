@@ -57,3 +57,66 @@ Thumbs.db
 # Tooling & scratch directories
 .gemini/
 .agents/
+
+# ================================================
+# CONFIDENTIAL — DO NOT COMMIT
+# ================================================
+
+# Database credentials & connection strings
+.env
+.env.*
+!.env.example
+*.env
+database.yml
+database.json
+config/database*
+
+# Local PostgreSQL database files & dumps
+*.sql.bak
+*.dump
+*.pg_dump
+pg_data/
+postgres_data/
+pgdata/
+*.pgpass
+
+# Database schema (confidential — server-side only)
+src/Database/
+
+# Server-side API secrets & configuration
+src/lib/postgres.ts
+src/app/api/db/
+
+# Private keys, certificates & auth tokens
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.cert
+auth.json
+credentials.json
+service-account*.json
+firebase-adminsdk*.json
+google-credentials*.json
+
+# AI / ML model weights & confidential datasets
+*.model
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.h5
+*.bin
+*.safetensors
+models/
+weights/
+checkpoints/
+datasets/
+
+# Sensitive configuration files
+config/secrets*
+secrets/
+private/
+confidential/
+internal/

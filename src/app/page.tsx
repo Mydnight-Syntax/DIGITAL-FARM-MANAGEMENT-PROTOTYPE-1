@@ -5,6 +5,7 @@ import { useApp } from '@/context/AppContext';
 import { Navbar } from '@/components/layout/Navbar';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { RoleSelectionScreen } from '@/components/portals/RoleSelectionScreen';
+import { AuthPage } from '@/components/auth/AuthPage';
 import { FarmerPortal } from '@/components/portals/FarmerPortal';
 import { VeterinarianPortal } from '@/components/portals/VeterinarianPortal';
 import { RegulatorPortal } from '@/components/portals/RegulatorPortal';
@@ -22,7 +23,7 @@ import { LivestockPassportsView } from '@/components/views/LivestockPassportsVie
 import { Smartphone, Monitor } from 'lucide-react';
 
 export default function Home() {
-  const { userRole, viewMode, setViewMode, activeModal } = useApp();
+  const { userRole, authScreenState, viewMode, setViewMode, activeModal } = useApp();
   const [activeTab, setActiveTab] = useState('dashboard');
 
   const renderActiveContent = () => {
@@ -55,10 +56,10 @@ export default function Home() {
       {/* Top Bar Navigation */}
       <Navbar />
 
-      {/* Main Body */}
-      {userRole === 'ROLE_SELECT' ? (
-        <RoleSelectionScreen />
-      ) : (
+      {/* Main Body Flow */}
+      {authScreenState === 'ROLE_SELECTION' && <RoleSelectionScreen />}
+      {authScreenState === 'AUTH_PAGE' && <AuthPage />}
+      {authScreenState === 'DASHBOARD' && (
         <div className="flex flex-1 w-full max-w-[1440px] mx-auto">
           
           {/* Sidebar Navigation */}

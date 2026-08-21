@@ -16,10 +16,10 @@ import {
 } from 'lucide-react';
 
 export const RoleSelectionScreen: React.FC = () => {
-  const { setUserRole, openModal } = useApp();
+  const { selectRoleForAuth, openModal } = useApp();
 
   const handleSelectRole = (role: UserRole) => {
-    setUserRole(role);
+    selectRoleForAuth(role);
   };
 
   return (
@@ -128,7 +128,7 @@ export const RoleSelectionScreen: React.FC = () => {
       {/* Secondary Demo Buttons */}
       <div className="mt-12 text-center z-10 flex flex-wrap items-center justify-center gap-4">
         <button
-          onClick={() => openModal('USER_AUTH')}
+          onClick={() => selectRoleForAuth('FARMER')}
           className="flex items-center gap-2 px-4 py-2 bg-surface rounded-full text-xs font-semibold text-on-surface border border-outline-variant/40 hover:bg-surface-container transition-colors shadow-sm"
         >
           <UserCheck className="w-4 h-4 text-secondary" />

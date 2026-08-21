@@ -1,5 +1,14 @@
 export type UserRole = 'ROLE_SELECT' | 'FARMER' | 'VETERINARIAN' | 'REGULATOR';
 
+export type AuthScreenState = 'ROLE_SELECTION' | 'AUTH_PAGE' | 'DASHBOARD';
+
+export interface UserProfile {
+  name: string;
+  email: string;
+  role: UserRole;
+  identifier: string;
+}
+
 export type ViewMode = 'DESKTOP' | 'MOBILE_FRAME';
 
 export type AnimalStatus = 'Healthy' | 'Under Treatment' | 'Withdrawal Active' | 'MRL Risk';
