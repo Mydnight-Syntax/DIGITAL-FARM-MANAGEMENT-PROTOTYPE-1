@@ -1,12 +1,17 @@
 /** @type {import('next').NextConfig} */
+const isStaticExport = process.env.NEXT_PUBLIC_IS_STATIC_EXPORT === 'true';
+
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',          // Required: generates the ./out folder for GitHub Pages
-  basePath: '/DIGITAL-FARM-MANAGEMENT-PROTOTYPE-1',   // Must match your GitHub repo name exactly
-  assetPrefix: '/DIGITAL-FARM-MANAGEMENT-PROTOTYPE-1', // Ensures JS/CSS assets load from the correct path
-  images: {
-    unoptimized: true,       // Required: Next.js Image Optimization is not supported in static export
-  },
+  ...(isStaticExport && {
+    output: 'export',
+    basePath: '/DIGITAL-FARM-MANAGEMENT-PROTOTYPE-1',
+    assetPrefix: '/DIGITAL-FARM-MANAGEMENT-PROTOTYPE-1',
+    images: {
+      unoptimized: true,
+    },
+  }),
 };
 
 module.exports = nextConfig;
+
